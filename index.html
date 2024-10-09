@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script type="text/javascript">
+    (function(){
+        emailjs.init("anPhh9UIcNiPlv4a1"); // Replace with your EmailJS User ID
+    })();
+	</script>
   </head>
   <body>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -103,13 +109,13 @@
             <h2 class="mb-4">Services Menu</h2>
           </div>
         </div>
-        <div class="row no-gutters d-flex">
+        <div class="row no-gutters d-flex service-con">
           <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
               <div class="icon"><span class="flaticon-male-hair-of-head-and-face-shapes"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Haircut &amp; Styling</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Hair-dressing &amp; Hair Styling</h3>
+                <p>Transform your look with our expert haircuts and styling</p>
               </div>
             </div>    
           </div>
@@ -117,8 +123,8 @@
             <div class="media block-6 services d-block text-center">
               <div class="icon"><span class="flaticon-beard"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Beard</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Hair Cut</h3>
+                <p>Revitalize your hair with our nourishing treatments for healthy, vibrant locks.</p>
               </div>
             </div>      
           </div>
@@ -126,8 +132,8 @@
             <div class="media block-6 services d-block text-center">
               <div class="icon"><span class="flaticon-beauty-products"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Makeup</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Manicure and Pedicure</h3>
+                <p>Enjoy our relaxing manicure and pedicure for perfectly pampered hands and feet.</p>
               </div>
             </div>      
           </div>
@@ -135,8 +141,17 @@
             <div class="media block-6 services d-block text-center">
               <div class="icon"><span class="flaticon-healthy-lifestyle-logo"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Body Treatment</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Facials</h3>
+                <p>Refresh and rejuvenate your skin with our luxurious facial treatments tailored to your needs.</p>
+              </div>
+            </div>      
+          </div>
+		  <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon"><span class="flaticon-healthy-lifestyle-logo"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Nails</h3>
+                <p>Refresh and rejuvenate your skin with our luxurious facial treatments tailored to your needs.</p>
               </div>
             </div>      
           </div>
@@ -155,54 +170,56 @@
         <h3 class="vr">Call Us: 0811- 042- 2399, 09083235258</h3>
     		<div class="row justify-content-center">
     			<div class="col-md-10 ftco-animate">
-    				<form action="#" class="appointment-form">
+    		  <form action="#" class="appointment-form">
 	            <div class="row">
 	              <div class="col-sm-6">
 	                <div class="form-group">
-			              <input type="text" class="form-control" id="appointment_name" placeholder="Name">
+			              <input type="text" class="form-control" id="fullName" placeholder="Name">
 			            </div>
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
-			              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+			              <input type="text" class="form-control" id="email_id" placeholder="Email">
 			            </div>
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
-	                  <input type="text" class="form-control appointment_date" placeholder="Date">
+	                  <input type="text" class="form-control appointment_date" id="date_id" placeholder="Date">
 	                </div>    
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
-	                  <input type="text" class="form-control appointment_time" placeholder="Time">
+	                  <input type="text" class="form-control appointment_time" id="time_id" placeholder="Time">
 	                </div>
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
 			              <div class="select-wrap">
                       <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                      	<option value="">Professional Makeup</option>
-                        <option value="">Manicure Pedicure</option>
-                        <option value="">Body Treatment</option>
-                        <option value="">Haircut &amp; Coloring</option>
+                      <select name="" class="form-control" id="preference">
+                      	<option value="">Choose</option>
+						<option value="Facials">Facials</option>
+                        <option value="Manicure & Pedicure">Manicure & Pedicure</option>
+                        <option value="Nails">Nails</option>
+						<option value="Haircut">Haircut</option>
+                        <option value="Hair-Styling &amp; Coloring">Hair-Styling &amp; Hair-dressing</option>
                       </select>
                     </div>
-			            </div>
+			        </div>
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
-	                  <input type="text" class="form-control" id="phone" placeholder="Phone">
+	                  <input type="text" class="form-control" id="phoneNumber"  placeholder="Phone">
 	                </div>
 	              </div>
 	              <div class="col-md-12">
 	              	<div class="form-group">
-		                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+		                <textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
 		              </div>
 	              </div>
 		          </div>
 		          <div class="form-group">
-	              <input type="submit" value="Make an Appointment" class="btn btn-primary">
+	              <input type="submit" onclick="handleClick()" value="Make an Appointment" class="btn btn-primary">
 	            </div>
 	          </form>
     			</div>
@@ -211,7 +228,7 @@
     </section>
 
 
-    <section class="ftco-section ftco-team">
+    <!-- <section class="ftco-section ftco-team">
     	<div class="container-fluid px-md-5">
     		<div class="row justify-content-center pb-3">
           <div class="col-md-10 heading-section text-center ftco-animate">
@@ -261,7 +278,7 @@
         	</div>
         </div>
     	</div>
-    </section>
+    </section> -->
 
     <section class="ftco-section ftco-no-pt ftco-no-pb">
     	<div class="container">

@@ -9890,3 +9890,9 @@ textarea.form-control {
   align-items: center;
   padding: 12px 0px 12px 12px;
 }
+
+.service-con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

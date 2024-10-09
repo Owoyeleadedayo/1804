@@ -347,3 +347,43 @@
 
 })(jQuery);
 
+
+
+function handleClick() {
+  let fullName = document.getElementById("fullName").value;
+  let emailId = document.getElementById("email_id").value;
+  let phoneNumber = document.getElementById("phoneNumber").value;
+  let dateId = document.getElementById("date_id").value;
+  let timeId = document.getElementById("time_id").value;
+  const preferenceId = document.getElementById("preference").value;
+  const message = `Customer ${fullName} wants a/an ${preferenceId} on ${dateId} by ${timeId}.`;
+
+  document.getElementById("message").value = message;
+
+  // Create the parameters object
+  let params = {
+    from_name: fullName,
+    email_id: emailId,
+    phoneNumber: phoneNumber,
+    Date: dateId,
+    Time: timeId,
+	preference: preferenceId,
+    message: message, 
+  };
+  emailjs
+    .send("service_s3zdsgg", "template_690az51", params)
+    .then(function (res) {
+      alert("Success! Email sent with status: " + res.status);
+
+      document.getElementById("fullName").value = "";
+      document.getElementById("email_id").value = "";
+      document.getElementById("phoneNumber").value = "";
+      document.getElementById("date_id").value = "";
+      document.getElementById("time_id").value = "";
+      document.getElementById("preference").value = "";
+      document.getElementById("message").value = "";
+    })
+    .catch(function (error) {
+      console.log("Failed to send email. Error: " + JSON.stringify(error));
+    });
+}
