@@ -350,26 +350,38 @@
 
 
 function handleClick() {
-  let fullName = document.getElementById("fullName").value;
-  let emailId = document.getElementById("email_id").value;
-  let phoneNumber = document.getElementById("phoneNumber").value;
-  let dateId = document.getElementById("date_id").value;
-  let timeId = document.getElementById("time_id").value;
-  const preferenceId = document.getElementById("preference").value;
-  const message = `Customer ${fullName} wants a/an ${preferenceId} on ${dateId} by ${timeId}.`;
+  let fullName = document.getElementById("fullName").value.trim();
+  let emailId = document.getElementById("email_id").value.trim();
+  let phoneNumber = document.getElementById("phoneNumber").value.trim();
+  let dateId = document.getElementById("date_id").value.trim();
+  let timeId = document.getElementById("time_id").value.trim();
+  const preferenceId = document.getElementById("preference").value.trim();
 
+  if (
+    !fullName ||
+    !emailId ||
+    !phoneNumber ||
+    !dateId ||
+    !timeId ||
+    !preferenceId
+  ) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  const message = `Customer ${fullName} wants a/an ${preferenceId} on ${dateId} by ${timeId}.`;
   document.getElementById("message").value = message;
 
-  // Create the parameters object
   let params = {
     from_name: fullName,
     email_id: emailId,
     phoneNumber: phoneNumber,
     Date: dateId,
     Time: timeId,
-	preference: preferenceId,
-    message: message, 
+    preference: preferenceId,
+    message: message,
   };
+
   emailjs
     .send("service_s3zdsgg", "template_690az51", params)
     .then(function (res) {
@@ -384,6 +396,7 @@ function handleClick() {
       document.getElementById("message").value = "";
     })
     .catch(function (error) {
-      console.log("Failed to send email. Error: " + JSON.stringify(error));
+      alert("Failed to send email. Please try again.");
+      console.log("Error: " + JSON.stringify(error));
     });
 }
