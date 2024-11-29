@@ -3437,7 +3437,7 @@ input[type="button"].btn-block {
   align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0.5rem 1rem; }
   .navbar > .container,
   .navbar > .container-fluid {
@@ -3451,7 +3451,9 @@ input[type="button"].btn-block {
     align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between; }
+    justify-content: center;
+    padding: 10px 0px;
+  }
 
 .navbar-brand {
   display: inline-block;
@@ -8978,7 +8980,7 @@ textarea.form-control {
   font-size: 24px; }
 
 .ftco-section {
-  padding: 7em 0;
+  padding: 4em 0;
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
@@ -9134,7 +9136,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   background: #333333;
-  padding: 7em 0;
+  padding: 30px 0;
   z-index: 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -9174,7 +9176,7 @@ textarea.form-control {
 
 .ftco-footer-social li {
   list-style: none;
-  margin: 0 10px 0 0;
+  margin: 0 0px 0 0;
   display: inline-block; }
   .ftco-footer-social li a {
     height: 50px;
@@ -9213,7 +9215,7 @@ textarea.form-control {
   .ftco-media .heading {
     font-weight: normal; }
   .ftco-media.ftco-media-shadow {
-    padding: 40px;
+    /* padding: 40px; */
     background: #fff;
     -webkit-box-shadow: 0 10px 50px -15px rgba(0, 0, 0, 0.3);
     box-shadow: 0 10px 50px -15px rgba(0, 0, 0, 0.3);
